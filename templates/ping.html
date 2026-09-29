@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Ping Tool (Command Injection)</h2>
+<div class="card">
+  <form method="GET" action="/tools/ping">
+    <label>Host</label><br>
+    <input name="host" value="{{ host }}" placeholder="127.0.0.1">
+    <button type="submit">Run</button>
+  </form>
+  <p class="muted">Intentionally unsafe. Test with Burp Repeater.</p>
+</div>
+
+<h3>Output</h3>
+<pre>{{ output }}</pre>
+{% endblock %}

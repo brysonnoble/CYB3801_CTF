@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>VulnWeb Lab (Local Only)</h2>
+<div class="card">
+  <p>This website is <b>intentionally vulnerable</b> for a Burp Suite lab.</p>
+  <ul>
+    <li><b>SQL Injection</b> in <code>/login</code></li>
+    <li><b>Reflected XSS</b> in <code>/search?q=</code></li>
+    <li><b>Stored XSS</b> in <code>/notes</code></li>
+    <li><b>Command Injection</b> in <code>/tools/ping?host=</code></li>
+  </ul>
+  <p class="muted">Run locally only; do not expose to the internet.</p>
+</div>
+<p>Start: <a href="/login">Login</a> (try <code>alice/alice123</code>).</p>
+{% endblock %}

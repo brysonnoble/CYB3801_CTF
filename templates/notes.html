@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Notes (Stored XSS)</h2>
+<div class="card">
+  <form method="POST">
+    <textarea name="body" rows="3" cols="70" placeholder="Write a note..."></textarea><br><br>
+    <button type="submit">Save Note</button>
+  </form>
+  <p class="muted">Notes render unsafely for training.</p>
+</div>
+
+{% for n in notes %}
+  <div class="card">
+    <b>{{ n.author }}</b>: <span>{{ n.body|safe }}</span>
+  </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,13 @@
+services:
+  vulnweb:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - vuln_data:/data
+    environment:
+      - FLASK_ENV=development
+
+volumes:
+  vuln_data:

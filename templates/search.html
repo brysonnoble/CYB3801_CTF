@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Search (Reflected XSS)</h2>
+<div class="card">
+  <form method="GET" action="/search">
+    <input name="q" value="" placeholder="type a query">
+    <button type="submit">Search</button>
+  </form>
+  <p>Results for: <span>{{ q|safe }}</span></p>
+  <p class="muted">Tip: URL-encoded HTML like <code>%3Ch1%3EHELLO%3C%2Fh1%3E</code></p>
+</div>
+{% endblock %}
